@@ -1,0 +1,42 @@
+# ── Python ──────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── Virtual Environment ─────────────────
+venv/
+env/
+.venv/
+
+# ── Environment Variables ───────────────
+.env
+
+# ── ChromaDB Local data ─────────────────
+chroma_db/
+backend/chroma_db/
+
+# ── Uploaded documents ──────────────────
+backend/uploads/
+
+# ── IDE ─────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ── OS ──────────────────────────────────
+Thumbs.db
+.DS_Store
+
+# ── Logs ────────────────────────────────
+*.log
+
+# ── Misc ────────────────────────────────
+.agent/

@@ -1,0 +1,105 @@
+BILL OF LADING
+==============
+
+BOL Number: BOL-2024-33891
+Date: February 3, 2024
+Pro Number: PRO-556789
+
+SHIPPER
+-------
+Name: Midwest Steel Solutions Inc.
+Address: 4500 Steel Works Drive
+         Gary, IN 46402
+Contact: Robert Williams
+Phone: (219) 555-7890
+Email: rwilliams@midweststeel.com
+
+CONSIGNEE
+---------
+Name: Southern Construction Supply
+Address: 7200 Builder's Row
+         Houston, TX 77001
+Contact: Maria Garcia
+Phone: (713) 555-4321
+Email: mgarcia@southernconstruction.com
+
+THIRD PARTY BILLING
+--------------------
+Bill To: Midwest Steel Solutions Inc.
+Payment Terms: Net 45
+
+CARRIER DETAILS
+---------------
+Carrier Name: Ironhorse Transport Co.
+SCAC Code: IRHT
+MC Number: MC-112233
+Equipment Type: 48' Flatbed
+Mode: FTL
+
+COMMODITY INFORMATION
+---------------------
+Description: Steel I-Beams (W12x26), Structural Grade A992
+NMFC Number: 110420
+Freight Class: 65
+HM: No
+
+QUANTITY AND WEIGHT
+-------------------
+Pieces: 12 bundles
+Handling Units: 6 (2 bundles per unit)
+Gross Weight: 58,200 lbs
+Net Weight: 57,800 lbs
+
+DIMENSIONS
+----------
+Length: 40 feet per beam
+Width: 12 inches (flange)
+Height: 12.22 inches (depth)
+
+PICKUP INFORMATION
+------------------
+Pickup Date: February 5, 2024
+Pickup Time: 06:00 AM - 10:00 AM CST
+Dock/Door: Loading Bay 7
+Seal Number: SL-998877
+
+DELIVERY INFORMATION
+--------------------
+Delivery Date: February 7, 2024
+Delivery Time: 07:00 AM - 03:00 PM CST
+
+FREIGHT CHARGES
+---------------
+Base Rate: $4,800.00
+Fuel Surcharge: $576.00
+Overweight Premium: $250.00
+Total Charges: $5,626.00
+Currency: USD
+
+SPECIAL INSTRUCTIONS
+--------------------
+- Flatbed must have minimum 8 straps and 4 chains
+- Steel must be tarped (3 tarps minimum)
+- Do NOT stack bundles more than 2 high
+- Oversize load permits required for TX
+- Driver must wear steel-toed boots and hard hat at both facilities
+- Call consignee 2 hours before arrival
+
+SHIPPER CERTIFICATION
+---------------------
+This is to certify that the above named materials are properly classified,
+described, packaged, marked, and labeled, and are in proper condition for
+transportation according to the applicable regulations of the Department
+of Transportation.
+
+Shipper Signature: Robert Williams
+Date: February 3, 2024
+
+CARRIER ACKNOWLEDGMENT
+----------------------
+Received the above described goods in apparent good order.
+Driver Name: Carlos Mendez
+Driver Signature: C. Mendez
+Date: February 5, 2024
+Truck Number: TK-4521
+Trailer Number: TR-8877

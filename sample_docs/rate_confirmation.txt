@@ -1,0 +1,81 @@
+RATE CONFIRMATION
+=================
+
+Confirmation Number: RC-2024-78432
+Date: January 15, 2024
+
+CARRIER INFORMATION
+-------------------
+Carrier Name: FastFreight Logistics LLC
+MC Number: MC-987654
+DOT Number: 3456789
+Driver: John Martinez
+Driver Phone: (555) 123-4567
+
+SHIPPER INFORMATION
+-------------------
+Shipper: Acme Manufacturing Corp
+Address: 1200 Industrial Blvd, Suite 100
+         Chicago, IL 60601
+Contact: Sarah Johnson
+Phone: (312) 555-8901
+
+CONSIGNEE INFORMATION
+---------------------
+Consignee: Pacific Distribution Center
+Address: 8900 Commerce Way
+         Los Angeles, CA 90045
+Contact: Michael Chen
+Phone: (310) 555-2345
+
+SHIPMENT DETAILS
+----------------
+Shipment ID: SH-2024-56789
+Load Number: LD-78432
+Reference Number: PO-44521
+
+Commodity: Automotive Parts (Class 85)
+Pieces: 24 pallets
+Weight: 42,500 lbs
+Dimensions: 48" x 40" x 48" per pallet
+
+Equipment Type: 53' Dry Van
+Mode: FTL (Full Truckload)
+
+SCHEDULE
+--------
+Pickup Date: January 16, 2024
+Pickup Time: 08:00 AM - 12:00 PM CST
+Pickup Appointment Required: Yes
+
+Delivery Date: January 18, 2024
+Delivery Time: 06:00 AM - 02:00 PM PST
+Delivery Appointment Required: Yes
+
+RATE INFORMATION
+----------------
+Line Haul Rate: $3,250.00
+Fuel Surcharge: $325.00 (10%)
+Total Rate: $3,575.00
+Currency: USD
+Payment Terms: Net 30
+
+SPECIAL INSTRUCTIONS
+--------------------
+1. Driver must have valid ID and check in at gate
+2. Lumper fees NOT included - carrier responsible
+3. Tarp required if weather conditions warrant
+4. No double brokering permitted
+5. Temperature-sensitive: maintain ambient conditions
+6. Notify dispatch upon pickup and delivery completion
+
+TERMS AND CONDITIONS
+--------------------
+This rate confirmation constitutes a binding agreement between the carrier and broker.
+Carrier agrees to transport the described freight at the agreed-upon rate.
+All claims must be filed within 9 months of delivery date.
+Carrier must maintain minimum insurance: $1,000,000 auto liability, $100,000 cargo insurance.
+
+Authorized By: Regional Transport Brokerage
+Broker Agent: David Kim
+Date: January 15, 2024

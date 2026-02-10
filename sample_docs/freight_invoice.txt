@@ -1,0 +1,89 @@
+FREIGHT INVOICE
+===============
+
+Invoice Number: INV-2024-11234
+Invoice Date: March 10, 2024
+Due Date: April 9, 2024
+
+FROM (CARRIER):
+Rapid Transit Freight Inc.
+P.O. Box 5500
+Nashville, TN 37205
+EIN: 62-1234567
+MC Number: MC-445566
+Phone: (615) 555-0099
+Email: billing@rapidtransit.com
+
+BILL TO:
+GlobalTech Electronics
+Attn: Accounts Payable
+2100 Innovation Drive
+San Jose, CA 95110
+
+SHIPMENT REFERENCE
+------------------
+Shipment ID: STF-2024-90012
+BOL Number: BOL-8876543
+PO Number: PO-GT-2024-0089
+Load Number: LD-45678
+
+ORIGIN AND DESTINATION
+----------------------
+Origin: GlobalTech Electronics Warehouse
+        2100 Innovation Drive, San Jose, CA 95110
+
+Destination: East Coast Distribution Hub
+             1500 Logistics Parkway, Edison, NJ 08817
+
+SHIPMENT DETAILS
+----------------
+Pickup Date: March 5, 2024 at 02:00 PM PST
+Delivery Date: March 8, 2024 at 09:30 AM EST
+
+Equipment Type: 53' Reefer (Temperature-Controlled)
+Mode: FTL
+Temperature Setting: 65°F (±2°F)
+
+Commodity: Electronic Components (Sensitive)
+Pieces: 180 cartons on 15 pallets
+Weight: 18,750 lbs
+Value Declared: $450,000.00
+
+DRIVER AND EQUIPMENT
+--------------------
+Driver: Angela Thompson
+Truck: Unit 2299
+Trailer: Reefer-TR-5567
+
+CHARGES BREAKDOWN
+-----------------
+Line Haul Rate:          $5,200.00
+Fuel Surcharge (12%):      $624.00
+Reefer/Temperature Fee:    $350.00
+Lumper Fee:                $175.00
+Detention (2 hrs @ $75):   $150.00
+                          ---------
+Subtotal:                $6,499.00
+Accessorial Adjustments:     $0.00
+                          ---------
+TOTAL DUE:               $6,499.00
+
+Currency: USD
+Payment Terms: Net 30
+
+NOTES
+-----
+- Detention of 2 hours at origin due to delayed loading
+- Temperature log available upon request (maintained 63-67°F throughout transit)
+- POD (Proof of Delivery) signed by: James Wong, Warehouse Manager
+- No damages reported at delivery
+
+REMITTANCE
+----------
+Please remit payment to:
+Rapid Transit Freight Inc.
+Bank: First National Bank of Tennessee
+Account: XXXX-XXXX-4521
+Routing: 064000017
+
+Questions about this invoice? Contact billing@rapidtransit.com or (615) 555-0099.
