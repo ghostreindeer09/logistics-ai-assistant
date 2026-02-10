@@ -1,10 +1,11 @@
-# Use an official Python image with a version matching your runtime.txt
-FROM python:3.13-slim
+# Use official Python 3.12 slim image (more compatible with Pydantic 1.10.x)
+FROM python:3.12-slim
 
 # Install system dependencies needed for Rust compilation
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Rust (needed for packages like tiktoken)
@@ -14,12 +15,12 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 # Set working directory
 WORKDIR /app
 
-# Copy your Python dependencies first for caching
+# Copy Python dependencies first (for caching)
 COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of your app code
+# Copy the rest of your code
 COPY . .
 
 # Expose the port your app runs on
