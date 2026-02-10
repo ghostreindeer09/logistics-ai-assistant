@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: logistics-ai-assistant
+    runtime: docker
+    repo: https://github.com/ghostreindeer09/logistics-ai-assistant
+    plan: free
+    region: oregon
+    branch: main
+    numInstances: 1
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: OPENAI_API_KEY
+        sync: false
