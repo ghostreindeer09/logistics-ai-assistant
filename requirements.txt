@@ -5,5 +5,5 @@ pydantic==2.6.2
 sentence-transformers==2.2.2
 chroma-hnswlib==0.7.6
 numpy==1.26.4
-onnxruntime==1.24.1
-tiktoken==0.4.1
+onnxruntime==1.15.1
+tiktoken>=0.12.0
