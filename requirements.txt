@@ -6,7 +6,7 @@ python-dotenv==1.0.0
 openai==1.6.1
 tiktoken==0.3.3
 
-chromadb==0.4.21
+chromadb==0.4.14
 sentence-transformers==2.2.2
 
 PyPDF2==3.0.1
