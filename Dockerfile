@@ -1,30 +1,26 @@
-# Use official Python image
+# Base image
 FROM python:3.12-slim
 
-# Install system dependencies for Rust and building Python packages
-RUN apt-get update && apt-get install -y \
+# System dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    curl \
     git \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Rust (needed for packages like tiktoken)
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-ENV PATH="/root/.cargo/bin:${PATH}"
-
-# Set working directory
+# Working directory
 WORKDIR /app
 
-# Copy Python dependencies first (for caching)
+# Copy and install dependencies
 COPY requirements.txt .
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
-# Copy entire project
+# Copy project code
 COPY . .
 
 # Expose port
 EXPOSE 8000
 
-# Run Uvicorn pointing to the backend package
+# Run the FastAPI app
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
