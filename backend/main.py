@@ -13,10 +13,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 
-from models import AskRequest, ExtractRequest, UploadResponse, AskResponse, ExtractResponse
-from document_processor import process_and_store, document_exists, UPLOAD_DIR
-from retriever import answer_question
-from extractor import extract_structured_data
+from .models import AskRequest, ExtractRequest, UploadResponse, AskResponse, ExtractResponse
+from .document_processor import process_and_store, document_exists, UPLOAD_DIR
+from .retriever import answer_question
+from .extractor import extract_structured_data
 
 load_dotenv()
 

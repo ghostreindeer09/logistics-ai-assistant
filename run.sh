@@ -25,7 +25,7 @@ source "$SCRIPT_DIR/venv/bin/activate"
 
 # Install dependencies
 echo "📦 Installing dependencies..."
-pip install -r "$SCRIPT_DIR/backend/requirements.txt" --quiet
+pip install -r "$SCRIPT_DIR/requirements.txt" --quiet
 
 # Setup .env if not exists
 if [ ! -f "$SCRIPT_DIR/.env" ]; then

@@ -1,7 +1,7 @@
-# Use official Python 3.12 slim image (more compatible with Pydantic 1.10.x)
+# Use official Python image
 FROM python:3.12-slim
 
-# Install system dependencies needed for Rust compilation
+# Install system dependencies for Rust and building Python packages
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
@@ -20,11 +20,11 @@ COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of your code
+# Copy entire project
 COPY . .
 
-# Expose the port your app runs on
+# Expose port
 EXPOSE 8000
 
-# Run the app with uvicorn
+# Run Uvicorn pointing to the backend package
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
