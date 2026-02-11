@@ -3,6 +3,13 @@ Logistics AI Assistant — FastAPI Backend
 Endpoints: POST /upload, POST /ask, POST /extract
 """
 
+# ── Force modern SQLite for Chroma (Render fix) ─────────────────────
+import sys
+import pysqlite3
+
+sys.modules["sqlite3"] = pysqlite3
+# ─────────────────────────────────────────────────────────────────────
+
 import os
 import shutil
 from typing import Optional
@@ -89,7 +96,6 @@ async def upload_document(file: UploadFile = File(...)):
     Upload a logistics document (PDF, DOCX, or TXT).
     The document will be parsed, chunked, embedded, and stored in the vector index.
     """
-    # Validate file extension
     filename = file.filename or "unknown"
     ext = os.path.splitext(filename)[1].lower()
 
@@ -99,15 +105,14 @@ async def upload_document(file: UploadFile = File(...)):
             detail=f"Unsupported file type: {ext}. Allowed: {', '.join(ALLOWED_EXTENSIONS)}"
         )
 
-    # Save file to disk
     file_path = os.path.join(UPLOAD_DIR, filename)
+
     try:
         with open(file_path, "wb") as f:
             shutil.copyfileobj(file.file, f)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to save file: {str(e)}")
 
-    # Process and store
     try:
         doc_id, num_chunks = process_and_store(
             file_path=file_path,
