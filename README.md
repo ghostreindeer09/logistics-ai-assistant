@@ -29,18 +29,8 @@
 <h2>📐 Architecture Overview</h2>
 
 <pre>
-Frontend (HTML/CSS/JS)
-        │
-        ▼
-FastAPI Backend
- ├── Document Processor (Parse → Chunk → Embed → Store)
- ├── RAG Retriever (Vector Search → Context → LLM → Score)
- ├── Structured Extractor (LLM + 50+ Regex Patterns)
- └── Guardrails (Confidence + Safety Layers)
+<img width="1046" height="300" alt="image" src="https://github.com/user-attachments/assets/ad4c9945-0dbf-47db-b412-77c511f5313c" />
 
-Embeddings: all-MiniLM-L6-v2 (384-dim)
-Vector Store: ChromaDB (cosine similarity)
-LLM: OpenAI GPT (optional)
 </pre>
 
 <hr>
