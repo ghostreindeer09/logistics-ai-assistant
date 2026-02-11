@@ -20,10 +20,11 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 
-from .models import AskRequest, ExtractRequest, UploadResponse, AskResponse, ExtractResponse
-from .document_processor import process_and_store, document_exists, UPLOAD_DIR
-from .retriever import answer_question
-from .extractor import extract_structured_data
+# ✅ Changed imports to plain (no dot)
+from models import AskRequest, ExtractRequest, UploadResponse, AskResponse, ExtractResponse
+from document_processor import process_and_store, document_exists, UPLOAD_DIR
+from retriever import answer_question
+from extractor import extract_structured_data
 
 load_dotenv()
 
@@ -56,7 +57,7 @@ EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
 
 # ── Serve Frontend ──────────────────────────────────────────────────
 
-FRONTEND_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
+FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "../frontend")
 
 
 @app.get("/")
