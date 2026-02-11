@@ -8,4 +8,4 @@ chroma-hnswlib==0.7.3
 numpy==1.26.4
 onnxruntime==1.24.1
 tiktoken==0.12.0
-huggingface-hub==0.17.5
+huggingface-hub==0.17.3
