@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/FastAPI-0.104-green?logo=fastapi">
   <img src="https://img.shields.io/badge/ChromaDB-Vector_Store-orange">
   <img src="https://img.shields.io/badge/OpenAI-GPT-black?logo=openai">
-  <img src="https://img.shields.io/badge/License-MIT-purple">
+
 </p>
 
 <hr>
@@ -230,11 +230,7 @@ README.md
 
 <hr>
 
-<h2>📄 License</h2>
 
-<p>MIT License — see <a href="LICENSE">LICENSE</a></p>
-
-<hr>
 
 <p align="center">
   Built for intelligent logistics document understanding 🚛
