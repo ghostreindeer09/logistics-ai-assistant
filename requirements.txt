@@ -1,7 +1,10 @@
+# Core FastAPI + server
 fastapi==0.104.0
 uvicorn[standard]==0.24.0
 python-dotenv==1.0.0
 pydantic==2.6.2
+
+# AI / embeddings
 sentence-transformers==2.2.2
 chromadb==0.4.21
 chroma-hnswlib==0.7.3
@@ -9,9 +12,13 @@ numpy==1.26.4
 onnxruntime==1.24.1
 tiktoken==0.12.0
 huggingface-hub==0.17.3
-pysqlite3-binary==0.5.2
+
+# Document processing
 python-docx==1.1.0
 PyPDF2==3.0.1
-openai==1.30.0
-docx2txt==0.8
-requests==2.31.0
+
+# OpenAI API
+openai>=1.0.0
+
+# SQLite workaround for Chroma (Python 3.11 compatible)
+pysqlite3>=0.5.0
