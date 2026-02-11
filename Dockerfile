@@ -1,4 +1,4 @@
-# Use Python 3.12 slim image (ARM64 compatible)
+# ── Logistics AI Backend — Docker Image ──────────────────────────
 FROM python:3.11-slim-bullseye
 
 # Environment variables
@@ -7,7 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1
 
-# System dependencies (added libsqlite3-dev for Chroma)
+# System dependencies (build-essential for C extensions, libsqlite3 for Chroma)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     git \
@@ -17,20 +17,27 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
-WORKDIR /app/backend
+WORKDIR /app
 
-# Copy requirements first (for caching)
+# Copy requirements first (Docker layer caching)
 COPY requirements.txt .
 
-# Upgrade pip and install dependencies
+# Install Python dependencies
 RUN pip install --upgrade pip --root-user-action=ignore \
     && pip install --no-cache-dir -r requirements.txt
 
-# Copy project files
-COPY . .
+# Copy backend source code
+COPY backend/ ./backend/
+
+# Copy .env.example as fallback defaults
+COPY .env.example .env.example
+
+# Create uploads directory
+RUN mkdir -p /app/backend/uploads
 
 # Expose port
 EXPOSE 8000
 
-# Run FastAPI server
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the FastAPI server from the backend directory
+# Using 'cd backend &&' so that relative imports in main.py resolve correctly
+CMD ["sh", "-c", "cd /app/backend && python -m uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]

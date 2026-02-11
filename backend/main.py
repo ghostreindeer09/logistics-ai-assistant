@@ -5,9 +5,12 @@ Endpoints: POST /upload, POST /ask, POST /extract
 
 # ── Force modern SQLite for Chroma (Render fix) ─────────────────────
 import sys
-import pysqlite3
 
-sys.modules["sqlite3"] = pysqlite3
+try:
+    import pysqlite3
+    sys.modules["sqlite3"] = pysqlite3
+except ImportError:
+    pass  # macOS / local dev — system sqlite3 is fine
 # ─────────────────────────────────────────────────────────────────────
 
 import os
@@ -16,8 +19,6 @@ from typing import Optional
 
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 
 # ✅ Changed imports to plain (no dot)
@@ -55,22 +56,16 @@ CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.45"))
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
 
-# ── Serve Frontend ──────────────────────────────────────────────────
-
-FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "../frontend")
-
+# ── Root ────────────────────────────────────────────────────────────
 
 @app.get("/")
-async def serve_frontend():
-    index_path = os.path.join(FRONTEND_DIR, "index.html")
-    if os.path.exists(index_path):
-        return FileResponse(index_path)
-    return {"message": "Logistics AI Assistant API", "docs": "/docs"}
-
-
-# Mount static files for frontend
-if os.path.exists(FRONTEND_DIR):
-    app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
+async def root():
+    return {
+        "message": "Logistics AI Assistant API",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "health": "/health",
+    }
 
 
 # ── Health Check ────────────────────────────────────────────────────

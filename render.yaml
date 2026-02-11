@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: logistics-ai-assistant
+    name: logistics-ai-backend
     runtime: docker
     repo: https://github.com/ghostreindeer09/logistics-ai-assistant
     plan: free
@@ -13,3 +13,15 @@ services:
         value: 8000
       - key: OPENAI_API_KEY
         sync: false
+      - key: OPENAI_MODEL
+        value: gpt-3.5-turbo
+      - key: EMBEDDING_MODEL
+        value: all-MiniLM-L6-v2
+      - key: CHUNK_SIZE
+        value: 512
+      - key: CHUNK_OVERLAP
+        value: 64
+      - key: TOP_K_RESULTS
+        value: 5
+      - key: CONFIDENCE_THRESHOLD
+        value: 0.45
