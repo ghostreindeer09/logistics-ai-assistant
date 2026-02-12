@@ -29,6 +29,9 @@ RUN pip install --upgrade pip --root-user-action=ignore \
 # Copy backend source code
 COPY backend/ ./backend/
 
+# Copy frontend static files (served by FastAPI at /ui)
+COPY frontend/ ./frontend/
+
 # Copy .env.example as fallback defaults
 COPY .env.example .env.example
 

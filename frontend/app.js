@@ -4,10 +4,11 @@
  */
 
 // ── Configuration ──────────────────────────────────────────────────
-// 🔧 Set this to your Render backend URL after deploying the backend.
-//    Example: "https://logistics-ai-backend.onrender.com"
-//    For local dev, use: "http://localhost:8000"
-const API_BASE = "https://logistics-ai-assistant-2.onrender.com";
+// Auto-detect: when served by the backend (Render), use same origin.
+// When opened as a local file, fall back to localhost:8000.
+const API_BASE = window.location.protocol === "file:"
+    ? "http://localhost:8000"
+    : window.location.origin;
 
 // ── State ──────────────────────────────────────────────────────────
 const state = {

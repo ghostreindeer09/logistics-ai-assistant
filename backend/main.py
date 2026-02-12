@@ -19,6 +19,8 @@ from typing import Optional
 
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import RedirectResponse
 from dotenv import load_dotenv
 
 # ✅ Changed imports to plain (no dot)
@@ -56,10 +58,19 @@ CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.45"))
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
 
+# ── Serve Frontend Static Files ─────────────────────────────────────
+
+FRONTEND_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
+if os.path.isdir(FRONTEND_DIR):
+    app.mount("/ui", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
+
 # ── Root ────────────────────────────────────────────────────────────
 
 @app.get("/")
 async def root():
+    # Redirect to frontend UI if available, otherwise show API info
+    if os.path.isdir(FRONTEND_DIR):
+        return RedirectResponse(url="/ui/index.html")
     return {
         "message": "Logistics AI Assistant API",
         "version": "1.0.0",
