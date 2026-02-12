@@ -1,13 +1,14 @@
 # ── Logistics AI Backend — Docker Image ──────────────────────────
-FROM python:3.11-slim-bullseye
+FROM python:3.11-slim-bookworm
 
 # Environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    TOKENIZERS_PARALLELISM=false
 
-# System dependencies (build-essential for C extensions, libsqlite3 for Chroma)
+# System dependencies (build-essential for C extensions, libsqlite3-dev)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     git \
@@ -18,10 +19,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Set working directory
 WORKDIR /app
 
-# Copy requirements first (Docker layer caching)
+# Install CPU-only PyTorch first (reduces image size & memory usage significantly)
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+
+# Copy requirements
 COPY requirements.txt .
 
-# Install Python dependencies
+# Install other Python dependencies
 RUN pip install --upgrade pip --root-user-action=ignore \
     && pip install --no-cache-dir -r requirements.txt
 

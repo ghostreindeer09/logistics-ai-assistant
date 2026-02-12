@@ -39,6 +39,17 @@ app = FastAPI(
     version="1.0.0",
 )
 
+@app.on_event("startup")
+async def startup_event():
+    import sqlite3
+    print(f"📦 SQLite version: {sqlite3.sqlite_version}")
+    print(f"📂 Upload dir: {UPLOAD_DIR}")
+    if os.access(UPLOAD_DIR, os.W_OK):
+        print("✅ Upload directory is writable")
+    else:
+        print("❌ Upload directory is NOT writable")
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
