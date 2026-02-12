@@ -4,11 +4,16 @@
  */
 
 // ── Configuration ──────────────────────────────────────────────────
-// Auto-detect: when served by the backend (Render), use same origin.
-// When opened as a local file, fall back to localhost:8000.
+// Auto-detect API backend:
+//   - Vercel frontend  → Render backend
+//   - Render (self-hosted) → same origin
+//   - Local file:// dev → localhost:8000
+const RENDER_BACKEND = "https://logistics-ai-assistant-2.onrender.com";
 const API_BASE = window.location.protocol === "file:"
     ? "http://localhost:8000"
-    : window.location.origin;
+    : window.location.hostname.includes("vercel")
+        ? RENDER_BACKEND
+        : window.location.origin;
 
 // ── State ──────────────────────────────────────────────────────────
 const state = {
